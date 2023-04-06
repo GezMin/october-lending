@@ -1064,11 +1064,18 @@
                 <div class="container-fluid pb-9 pb-lg-0 ps-lg-0">
                     <div class="row align-items-center">
                         <div class="col-lg-8 mb-7 mb-lg-0">
-                            <div id="map" style="height: 440px"></div>
+                            <div id="map" style="height: 440px">
+                                <script
+                                    type="text/javascript"
+                                    charset="utf-8"
+                                    async
+                                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aada19e11736bdccc7dd6ec5968db4250f9e68bf8d44115de0b7ac6fe1af1279c&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=false"
+                                ></script>
+                            </div>
                         </div>
                         <div class="col-lg-4 col-xl-3 mx-xl-auto">
                             <h2 class="display-7 text-uppercase mb-4" data-aos="fade-up">+7 (495) 648-61-94</h2>
-                            <p class="fs-3" data-aos="fade-up">г.Москва <br />улица Николая Химушина, 2/7,</p>
+                            <p class="fs-3" data-aos="fade-up">г.Москва <br />Ул. Николая Химушина 2/7/42</p>
                         </div>
                     </div>
                 </div>
@@ -1101,7 +1108,7 @@
                 <div class="row">
                     <div class="col-md-4 mb-6">
                         <a href="#!">
-                            <img src="assets/img/logo/logo2.svg" class="width-10x mb-4 h-auto" alt="" />
+                            <img src="assets/img/logo/logo2.svg" class="width-17x mb-4 h-auto" alt="" />
                         </a>
 
                         <p class="text-muted mb-0">
@@ -1240,32 +1247,5 @@
         </script>
 
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
-        <script>
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoiZGVzaWdubXlsaWZlIiwiYSI6ImNqeHlkMzljejAwaHAzbXFtaXphYWI3NmYifQ.IRPz2gseBSE-DQMzurY4ZA'
-            var officeLocation = [37.76085, 55.82054]
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/light-v10',
-                center: officeLocation,
-                zoom: 18,
-            })
-            // create the popup
-            var popup = new mapboxgl.Popup({
-                offset: 17,
-            }).setHTML(
-                '<h2 class="text-primary mb-2 fw-normal">г.Москва</h2><small class="text-muted fs-5">улица Николая Химушина, 2/7</small>',
-            )
-            // create DOM element for the marker
-            var el = document.createElement('div')
-            el.id = 'marker'
-            // disable map zoom when using scroll
-            map.scrollZoom.disable()
-            // create the marker
-            new mapboxgl.Marker(el)
-                .setLngLat(officeLocation)
-                .setPopup(popup) // sets a popup on this marker
-                .addTo(map)
-        </script>
     </body>
 </html>
