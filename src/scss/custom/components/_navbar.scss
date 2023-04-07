@@ -97,9 +97,9 @@
     width: 100%;
     z-index: $zindex-fixed;
 }
-
+// #xxx
 .navbar-brand {
-    width: $spacer * 12;
+    width: $spacer * 4;
     display: block;
     padding: 0;
     position: relative;
@@ -261,10 +261,10 @@ header.header-transparent.sticky-fixed {
             }
         }
     }
-
+    // #xxx
     .navbar-expand-lg {
         .navbar-brand {
-            width: $spacer * 12;
+            width: $spacer * 4;
         }
 
         &.navbar {
@@ -428,14 +428,12 @@ header.header-transparent.sticky-fixed {
 
             &::before {
                 top: 8px;
-                transition: top 0.3s 0.3s, transform 0.3s 0s,
-                    background-color 0.3s 0s;
+                transition: top 0.3s 0.3s, transform 0.3s 0s, background-color 0.3s 0s;
             }
 
             &::after {
                 bottom: 8px;
-                transition: bottom 0.3s 0.3s, transform 0.3s 0s,
-                    background-color 0.3s 0s;
+                transition: bottom 0.3s 0.3s, transform 0.3s 0s, background-color 0.3s 0s;
             }
         }
     }
@@ -448,14 +446,12 @@ header.header-transparent.sticky-fixed {
                 &:before {
                     top: 0;
                     transform: rotate(45deg);
-                    transition: top 0.2s 0s, transform 0.3s 0.2s,
-                        background-color 0.2s 0s;
+                    transition: top 0.2s 0s, transform 0.3s 0.2s, background-color 0.2s 0s;
                 }
 
                 &::after {
                     bottom: 0;
-                    transition: bottom 0.2s 0s, transform 0.2s 0.2s,
-                        background-color 0.2s 0s;
+                    transition: bottom 0.2s 0s, transform 0.2s 0.2s, background-color 0.2s 0s;
                     transform: rotate(-45deg);
                 }
             }
