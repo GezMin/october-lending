@@ -42,3 +42,6 @@ import './custom/typed'
 
 //Element parallax
 import './custom/rellax'
+
+//my-script
+import './custom/script'

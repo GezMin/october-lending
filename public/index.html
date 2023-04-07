@@ -1197,13 +1197,32 @@
                     </div>
                     <div class="col-md-5 col-xl-4 mb-6">
                         <h5 class="mb-3">отправить запрос</h5>
-                        <form novalidate class="needs-validation mb-5">
+                        <form novalidate class="needs-validation mb-5 set-price">
                             <div class="position-relative">
+                                <input
+                                    type="text"
+                                    required
+                                    class="form-control py-3 mb-2 bg-white border-0 text-dark"
+                                    placeholder="Введите имя.."
+                                    name="name"
+                                />
+                                <span class="mb-3 small invalid-feedback start-0 ms-4 w-100">Введите свое имя</span>
+                                <input
+                                    type="tel"
+                                    required
+                                    class="form-control py-3 mb-2 bg-white border-0 text-dark tel-footer"
+                                    placeholder="Введите телефон.."
+                                    name="phone"
+                                    data-tel-input
+                                    maxlength="18"
+                                />
+                                <span class="mb-3 small invalid-feedback start-0 ms-4 w-100">Введите телефон</span>
                                 <input
                                     type="email"
                                     required
                                     class="form-control py-3 mb-2 bg-white border-0 text-dark"
                                     placeholder="Введите email.."
+                                    name="email"
                                 />
                                 <span class="mb-3 small invalid-feedback start-0 ms-4 w-100"
                                     >Введите корректную почту</span
@@ -1257,7 +1276,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form novalidate class="needs-validation mb-5">
+                        <form novalidate class="needs-validation mb-5 set-prices">
                             <div class="position-relative">
                                 <input
                                     type="text"
@@ -1273,6 +1292,8 @@
                                     class="form-control py-3 mb-2 bg-white border-1 text-dark"
                                     placeholder="Введите телефон.."
                                     name="phone"
+                                    data-tel-input
+                                    maxlength="18"
                                 />
                                 <span class="mb-3 small invalid-feedback start-0 ms-4 w-100"
                                     >Введите правильный номер</span
@@ -1288,7 +1309,7 @@
                                     >Введите корректную почту</span
                                 >
                             </div>
-                            <button type="submit" class="btn btn-primary w-50">
+                            <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">
                                 отправить
                                 <i class="bx bx-send fs-5 align-middle ms-1"></i>
                             </button>
@@ -1297,6 +1318,7 @@
                 </div>
             </div>
         </div>
+
         <!-- scripts -->
         <script src="assets/js/theme.bundle.js"></script>
         <!--Swiper slider-->
@@ -1348,22 +1370,30 @@
             })
         </script>
         <script>
-            document.querySelector('form').addEventListener('submit', function (e) {
-                e.preventDefault()
-                let xhr = new XMLHttpRequest()
-                xhr.open('POST', 'mailer/smart.php', true)
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        document.querySelector('form').reset()
-                        document.querySelector('.modal').style.display = 'none'
-                    }
-                }
-                xhr.send(new FormData(this))
-                return false
-            })
-        </script>
+            function handleSubmit(className) {
+                const form = document.querySelector(`.${className}`)
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault()
 
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+                    const formData = new FormData(this)
+
+                    const xhr = new XMLHttpRequest()
+                    xhr.open('POST', 'smart.php', true)
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8')
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            form.reset()
+                            console.log('Успешно отправлено!')
+                        }
+                    }
+                    xhr.send(new URLSearchParams(formData).toString())
+
+                    return false
+                })
+            }
+
+            handleSubmit('set-price')
+            handleSubmit('set-prices')
+        </script>
     </body>
 </html>
