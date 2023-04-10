@@ -33,9 +33,9 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = 'Запрос на прайс от '. $name ;
 $mail->Body    = '
 		Пользователь оставил данные <br> <br> 
-	Имя: ' . $name . ' <br><br> 
-	Номер телефона: ' . $phone . '<br><br> 
-	E-mail: ' . $email . '';
+	Имя: <strong>' . $name . '</strong> <br><br> 
+	Номер телефона: <strong>' . $phone . '</strong><br><br> 
+	E-mail: <strong>' . $email . '</strong>';
 
 if(!$mail->send()) {
     return false;

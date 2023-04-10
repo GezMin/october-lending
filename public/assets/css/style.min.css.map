@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA,SACI,cAAA","file":"style.min.css","sourcesContent":[".top-img {\r\n    margin-bottom: 20px;\r\n}\r\n"]}
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA,SACI,cAAA,KAEJ,gBACI,MAAA,KACA,QAAA,KAAA,EAAA,KACA,UAAA","file":"style.min.css","sourcesContent":[".top-img {\r\n    margin-bottom: 20px;\r\n}\r\n.footerFormSent {\r\n    width: 100%;\r\n    padding: 15px 0 25px;\r\n    font-size: 21px;\r\n}\r\n"]}
