@@ -20715,7 +20715,7 @@ img.bg-image {
 }
 
 .navbar-brand {
-  width: 4rem;
+  width: 12rem;
   display: block;
   padding: 0;
   position: relative;
@@ -20836,7 +20836,7 @@ header.header-transparent.sticky-fixed.is-fixed .navbar-dark .navbar-fixed-bg {
     color: #fff;
   }
   .navbar-expand-lg .navbar-brand {
-    width: 4rem;
+    width: 12rem;
   }
   .navbar-expand-lg.navbar {
     padding-top: 0;

@@ -99,7 +99,7 @@
 }
 // #xxx
 .navbar-brand {
-    width: $spacer * 4;
+    width: $spacer * 12;
     display: block;
     padding: 0;
     position: relative;
@@ -264,7 +264,7 @@ header.header-transparent.sticky-fixed {
     // #xxx
     .navbar-expand-lg {
         .navbar-brand {
-            width: $spacer * 4;
+            width: $spacer * 12;
         }
 
         &.navbar {
