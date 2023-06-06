@@ -6,3 +6,19 @@
     padding: 15px 0 25px;
     font-size: 21px;
 }
+.partners-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.partners-img img {
+    height: 60px !important;
+    margin: 10px;
+}
+
+.bg-shade-info-two {
+    background-color: #c9c6c1;
+}
