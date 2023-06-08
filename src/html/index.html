@@ -166,11 +166,19 @@
                         <div
                             class="d-flex align-items-center justify-content-center"
                         >
-                            <a
+                            <!-- <a
                                 href="#about"
                                 class="btn btn-primary btn-lg me-2 me-lg-3"
                                 >подробнее</a
+                            > -->
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalPrice"
                             >
+                                заказать оптовый прайс
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -881,37 +889,167 @@
                         </div>
                         <div class="col-lg-8 col-xl-6 mx-xl-auto">
                             <h3
-                                class="display-6 ms-lg-n6 text-primary text-uppercase mb-5"
+                                class="display-6 ms-lg-n6 text-primary text-uppercase mb-5 text-center"
                                 data-aos="fade-up"
                             >
                                 Наши преимущества
                             </h3>
-                            <p class="mb-6 w-lg-75 lead" data-aos="fade-up">
-                                - Мы специализируемся на массовом производстве и
-                                готовы быстро произвести сотни, а иногда тысячи
-                                штук каждого нашего изделия. При этом мы всегда
-                                открыты к переговорам с нашими партнерами о
-                                производстве индивидуальных, необходимых лично
-                                им позиций при соблюдении определенных объемов
-                                их заказов.<br /><br />
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-comment"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
 
-                                - Наше производство имеет замкнутый цикл, что
-                                позволяет нам не зависеть от каких-либо
-                                сторонних производств и всегда соблюдать
-                                договоренности по срокам.<br />
+                                    <div>
+                                        <p class="mb-0">
+                                            Мы специализируемся на массовом
+                                            производстве и готовы быстро
+                                            произвести сотни, а иногда тысячи
+                                            штук каждого нашего изделия. При
+                                            этом мы всегда открыты к переговорам
+                                            с нашими партнерами о производстве
+                                            индивидуальных, необходимых лично им
+                                            позиций при соблюдении определенных
+                                            объемов их заказов.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-chat"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
 
-                                - Вся наша продукция сертифицирована, а товарный
-                                знак – официально зарегистрирован.<br />
+                                    <div>
+                                        <p class="mb-0">
+                                            Наше производство имеет замкнутый
+                                            цикл, что позволяет нам не зависеть
+                                            от каких-либо сторонних производств
+                                            и всегда соблюдать договоренности по
+                                            срокам.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-chat"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
 
-                                - Все готовые изделия обязательно проходят
-                                проверку на качество.<br />
+                                    <div>
+                                        <p class="mb-0">
+                                            Вся наша продукция сертифицирована,
+                                            а товарный знак официально
+                                            зарегистрирован.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-chat"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
 
-                                - Мы организуем доставку товара по всей
-                                России.<br />
-                                - Вживую все наши сундуки и пуфы выглядят
-                                гораздо лучше, чем на фото, что в большинстве
-                                приводит к импульсной покупке.
-                            </p>
+                                    <div>
+                                        <p class="mb-0">
+                                            Все готовые изделия обязательно
+                                            проходят проверку на качество.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-chat"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
+
+                                    <div>
+                                        <p class="mb-0">
+                                            Мы организуем доставку товара по
+                                            всей России.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-lg-90 lead">
+                                <!--FAQ item card-->
+                                <div
+                                    class="d-flex align-items-stretch"
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
+                                >
+                                    <div class="me-3 me-lg-4">
+                                        <span
+                                            class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
+                                        >
+                                            <i class="bx bx-chat"></i>
+                                        </span>
+                                        <!--/.Icon-->
+                                    </div>
+
+                                    <div>
+                                        <p class="mb-0">
+                                            Вживую все наши сундуки и пуфы
+                                            выглядят гораздо лучше, чем на фото,
+                                            что стимулирует импульсные покупки.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1065,14 +1203,14 @@
                             </div>
                             <div class="carousel-item">
                                 <img
-                                    src="assets/img/slide/slide_6.jpg"
+                                    src="assets/img/slide/slide_8.jpg"
                                     class="d-block w-100"
                                     alt="..."
                                 />
                             </div>
                             <div class="carousel-item">
                                 <img
-                                    src="assets/img/slide/slide_7.jpg"
+                                    src="assets/img/slide/slide_9.jpg"
                                     class="d-block w-100"
                                     alt="..."
                                 />
@@ -1355,6 +1493,7 @@
                                         class="text-primary fs-5 d-flex width-2x height-2x rounded-2 flex-center bg-primary bg-opacity-10"
                                     >
                                         <i class="bx bx-question-mark"></i>
+                                        <!-- <i class="bx bx-chat"></i> -->
                                     </span>
                                     <!--/.Icon-->
                                 </div>
