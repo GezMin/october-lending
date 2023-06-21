@@ -35,6 +35,58 @@
         <link href="assets/css/style.min.css" rel="stylesheet" />
 
         <title>October-home.ru</title>
+        <title>October-home.ru</title>
+        <style>
+            @media (max-width: 423px) {
+                .navbar-brand {
+                    width: 9rem;
+                }
+            }
+            @media (max-width: 374px) {
+                .navbar-brand {
+                    width: 7rem;
+                }
+            }
+
+            @media (max-width: 374px) {
+                .navbar-toggler {
+                    width: 15px;
+                }
+            }
+        </style>
+        <script type="text/javascript">
+            ;(function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        ;(m[i].a = m[i].a || []).push(arguments)
+                    }
+                m[i].l = 1 * new Date()
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return
+                    }
+                }
+                ;(k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a)
+            })(
+                window,
+                document,
+                'script',
+                'https://mc.yandex.ru/metrika/tag.js',
+                'ym',
+            )
+
+            ym(93977383, 'init', {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+            })
+        </script>
     </head>
 
     <body data-bs-spy="scroll" data-bs-target="#mainNavbarTheme">
@@ -1613,7 +1665,9 @@
                     <p class="text-center mb-0" data-aos="fade-up">
                         Остались еще вопросы ? <br />Не беспокойтесь, отправьте
                         нам письмо по адресу
-                        <a href="#!" class="fw-bold">info@october-home.ru</a>
+                        <a href="mailto:info@october-home.ru" class="fw-bold"
+                            >info@october-home.ru</a
+                        >
                     </p>
                 </div>
             </section>
@@ -1696,6 +1750,8 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- форма footer -->
                     <div class="col-md-5 col-xl-4 mb-6" id="contact">
                         <h5 class="mb-3">Oтправить запрос на прайс лист</h5>
                         <div class="footerFormSent" style="display: none">
@@ -1708,18 +1764,13 @@
                             <div class="position-relative">
                                 <input
                                     type="text"
-                                    required
                                     class="form-control py-3 mb-2 bg-white border-0 text-dark"
                                     placeholder="Введите имя.."
                                     name="name"
                                 />
-                                <span
-                                    class="mb-3 small invalid-feedback start-0 ms-4 w-100"
-                                    >Введите свое имя</span
-                                >
                                 <input
-                                    type="tel"
                                     required
+                                    type="tel"
                                     class="form-control py-3 mb-2 bg-white border-0 text-dark tel-footer"
                                     placeholder="Введите телефон.."
                                     name="phone"
@@ -1727,12 +1778,12 @@
                                     maxlength="18"
                                 />
                                 <span
-                                    class="mb-3 small invalid-feedback start-0 ms-4 w-100"
-                                    >Введите телефон</span
+                                    class="mb-3 small invalid-feedback start-0 ms-4 w-100 error-phone"
+                                    >Введите телефон!</span
                                 >
                                 <input
-                                    type="email"
                                     required
+                                    type="email"
                                     class="form-control py-3 mb-2 bg-white border-0 text-dark"
                                     placeholder="Введите email.."
                                     name="email"
@@ -1843,14 +1894,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form
-                            novalidate
-                            class="needs-validation mb-5 modalForm"
-                        >
+                        <form class="needs-validation mb-5 modalForm">
                             <div class="position-relative">
                                 <input
                                     type="text"
-                                    required
                                     class="form-control py-3 mb-2 bg-white border-1 text-dark"
                                     placeholder="Введите имя.."
                                     name="name"
@@ -1924,6 +1971,7 @@
                     prevEl: '.swiperS-button-prev',
                 },
             })
+
             //swiper Testimonials
             var swiperTestimonails = new Swiper('.swiper-testimonials', {
                 autoHeight: true,
@@ -1953,21 +2001,76 @@
             })
         </script>
         <script>
+            const btnSubmit1 = document.querySelectorAll(
+                '[data-block-btn="btnSubmit1"]',
+            )
+
+            btnSubmit1.forEach(item => {
+                item.setAttribute('disabled', 'disabled')
+            })
+
             function handleSubmit(className) {
                 const form = document.querySelector(`.${className}`)
                 let srtClass = className
+
+                const phoneInput = form.querySelector('input[name="phone"]')
+                const inputField = form.querySelector('input[name="name"]')
+                const emailInput = document.querySelector('input[name="email"]')
+
+                const btnSubmit = form.querySelector(
+                    '[data-block-btn="btnSubmit1"]',
+                )
+
+                function validatePhone() {
+                    const phone = phoneInput.value.replace(/\D/g, '')
+                    const isValidPhone = phone.length >= 11
+
+                    toggleValidity(phoneInput, isValidPhone)
+                }
+
+                function validateEmail(event) {
+                    const enteredValue = event.target.value
+                    const emailRegex =
+                        /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/
+                    const isValidEmail = emailRegex.test(enteredValue)
+
+                    toggleValidity(emailInput, isValidEmail)
+                }
+
+                function restrictInput(event) {
+                    const enteredValue = event.target.value
+                    const filteredValue = enteredValue.replace(
+                        /[^а-яА-Яa-zA-Z\s]/g,
+                        '',
+                    )
+                    event.target.value = filteredValue
+                }
+
+                function toggleValidity(element, isValid) {
+                    element.classList.toggle('is-invalid', !isValid)
+                    updateButtonState()
+                }
+
+                function updateButtonState() {
+                    const phoneIsValid =
+                        !phoneInput.classList.contains('is-invalid')
+                    const emailIsValid =
+                        !emailInput.classList.contains('is-invalid')
+                    const isValid = phoneIsValid && emailIsValid
+
+                    if (isValid) {
+                        btnSubmit.removeAttribute('disabled')
+                    } else {
+                        btnSubmit.setAttribute('disabled', 'disabled')
+                    }
+                }
+
+                phoneInput.addEventListener('input', validatePhone)
+                inputField.addEventListener('input', restrictInput)
+                emailInput.addEventListener('input', validateEmail)
+
                 form.addEventListener('submit', function (e) {
                     e.preventDefault()
-                    let inputs = form.querySelectorAll('input')
-                    let isValid = true
-                    inputs.forEach(element => {
-                        if (element.value.trim() === '') {
-                            isValid = false
-                            element.classList.add('is-invalid')
-                        } else {
-                            element.classList.remove('is-invalid')
-                        }
-                    })
 
                     function formaCheket(classForm) {
                         if (srtClass === classForm) {
@@ -1985,12 +2088,13 @@
                         }
                     }
 
-                    if (isValid) {
-                        const btnSubmit1 = form.querySelector(
-                            '[data-block-btn="btnSubmit1"]',
-                        )
-                        btnSubmit1.setAttribute('disabled', 'disabled')
+                    const phoneIsValid =
+                        !phoneInput.classList.contains('is-invalid')
+                    const emailIsValid =
+                        !emailInput.classList.contains('is-invalid')
+                    const isValid = phoneIsValid && emailIsValid
 
+                    if (isValid) {
                         const formData = new FormData(this)
                         const xhr = new XMLHttpRequest()
                         xhr.open('POST', 'smart.php', true)
