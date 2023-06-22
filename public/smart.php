@@ -23,7 +23,7 @@ $mail->Port = 465;                                    // TCP port to connect to
 $mail->setFrom('basket128@gmail.com', 'october-home');   // От кого письмо 
 $mail->addAddress('plush.m@inbox.ru');     // Add a recipient
 $mail->addAddress('msk1@deltamsk.ru');               // Name is optional
-$mail->addReplyTo('NextForever.ru@yandex.ru', 'Information');
+// $mail->addReplyTo('NextForever.ru@yandex.ru', 'Information');
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments

@@ -1757,10 +1757,7 @@
                         <div class="footerFormSent" style="display: none">
                             Спасибо ваша заявка отправлена!
                         </div>
-                        <form
-                            novalidate
-                            class="needs-validation mb-5 footerForm"
-                        >
+                        <form class="needs-validation mb-5 footerForm">
                             <div class="position-relative">
                                 <input
                                     type="text"
@@ -1782,9 +1779,9 @@
                                     >Введите телефон!</span
                                 >
                                 <input
-                                    required
                                     type="email"
-                                    class="form-control py-3 mb-2 bg-white border-0 text-dark"
+                                    required
+                                    class="form-control py-3 mb-2 bg-white border-1 text-dark"
                                     placeholder="Введите email.."
                                     name="email"
                                 />
@@ -2012,6 +2009,7 @@
             function handleSubmit(className) {
                 const form = document.querySelector(`.${className}`)
                 let srtClass = className
+                let isValid = false
 
                 const phoneInput = form.querySelector('input[name="phone"]')
                 const inputField = form.querySelector('input[name="name"]')
@@ -2093,6 +2091,18 @@
                     const emailIsValid =
                         !emailInput.classList.contains('is-invalid')
                     const isValid = phoneIsValid && emailIsValid
+
+                    if (
+                        phoneInput.value.trim() === '' &&
+                        emailInput.value.trim() === ''
+                    ) {
+                        isValid = false
+                        phoneInput.classList.add('is-invalid')
+                        emailInput.classList.add('is-invalid')
+                    } else {
+                        phoneInput.classList.remove('is-invalid')
+                        emailInput.classList.remove('is-invalid')
+                    }
 
                     if (isValid) {
                         const formData = new FormData(this)
